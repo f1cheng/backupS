@@ -1,5 +1,5 @@
-
-```c
+##amandaconfigration
+```
 ==Amanda service(client and server) config:amanda
 
 root@fred-Vostro-2420:~# more /etc/xinetd.d/amanda 
