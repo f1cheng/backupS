@@ -1,5 +1,7 @@
-## amandaconfigration
+## amandaconfiguration
 ```
+username: backup(not amandabackup in ubuntu); group disk
+sudo apt-get install amanda-server amanda-common amanda-client
 ==Amanda service(client and server) config:amanda
 
 root@fred-Vostro-2420:~# more /etc/xinetd.d/amanda 
