@@ -1,6 +1,6 @@
 
 =============configuraitons
-```
+``` 
 ==Amanda service(client and server) config:amanda
 
 root@fred-Vostro-2420:~# more /etc/xinetd.d/amanda 
@@ -87,4 +87,4 @@ define tapetype HARDDISK {
 includefile "advanced.conf"
 includefile "/etc/amanda/template.d/dumptypes"
 includefile "/etc/amanda/template.d/tapetypes"
-```
+```  
