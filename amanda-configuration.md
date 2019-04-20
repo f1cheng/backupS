@@ -1,4 +1,4 @@
-##amandaconfigration
+## amandaconfigration
 ```
 ==Amanda service(client and server) config:amanda
 
