@@ -89,6 +89,9 @@ define tapetype HARDDISK {
 }
 includefile "advanced.conf"
 includefile "/etc/amanda/template.d/dumptypes"
-includefile "/etc/amanda/template.d/tapetypes"  
+includefile "/etc/amanda/template.d/tapetypes"
+
+==disk list(host mountpoint compression mode)
+/etc/amanda/DailySet1/disklist
 
 ```  
