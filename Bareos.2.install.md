@@ -23,6 +23,11 @@ deb http://download.bareos.org/bareos/release/17.2/xUbuntu_16.04 /
 root@fred-Vostro-2420:/etc/bareos# wget -q $URL/Release.key -O- | apt-key add -
 OK
 
+root@fred-Vostro-2420:/etc/bareos# vi /etc/apt/sources.list.d/bareos.list root@fred-Vostro-2420:/etc/bareos# printf "deb $URL /\n" > /etc/apt/sources.list.d/bareos.list
+root@fred-Vostro-2420:/etc/bareos# vi /etc/apt/sources.list.d/bareos.list root@fred-Vostro-2420:/etc/bareos# vi /etc/apt/sources.list.d/bareos.list 
+root@fred-Vostro-2420:/etc/bareos# wget -q $URL/Release.key -O- | apt-key add -OK
+root@fred-Vostro-2420:/etc/bareos# apt install mariadb-server bareos bareos-database-mysql
+正在读取软件包列表... 完成
 
 
 ```
