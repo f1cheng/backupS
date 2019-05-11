@@ -40,4 +40,11 @@ Conf bareos-webui already enabled
 您在 /var/mail/root 中有新邮件
 root@fred-Vostro-2420:/etc/bareos# 
 
+
+
+root@fred-Vostro-2420://usr/share/bareos-webui# vi /usr/share/bareos-webui/vendor/Bareos/library/Bareos/BSock/BareosBSock.php
+root@fred-Vostro-2420://usr/share/bareos-webui# service apache2 restart
+root@fred-Vostro-2420://usr/share/bareos-webui# vi /usr/share/bareos-webui/vendor/Bareos/library/Bareos/BSock/BareosBSock.php
+root@fred-Vostro-2420://usr/share/bareos-webui# cd
+
 ```
