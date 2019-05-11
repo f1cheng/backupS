@@ -94,6 +94,19 @@ root@fred-Vostro-2420:/etc/apache2# service apache2 reload
 apache2.service is not active, cannot reload.
 root@fred-Vostro-2420:/etc/apache2# service apache2 restart
 
+root@fred-Vostro-2420:/etc/bareos# mysql --user=bareos --password=charging bareos
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 68
+Server version: 10.0.38-MariaDB-0ubuntu0.16.04.1 Ubuntu 16.04
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [bareos]> 
 
 
 ```
