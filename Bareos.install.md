@@ -121,6 +121,11 @@ MariaDB [bareos]> show tables;
 
 show databases;
 
+root@fred-Vostro-2420:/etc/bareos/bareos-dir.d/console# apt-get install bareos-webui
+正在读取软件包列表... 完成
+正在分析软件包的依赖关系树       
+正在读取状态信息... 完成       
+bareos-webui 已经是最新版 (17.2.4-15.1)。
 
 ```
 
