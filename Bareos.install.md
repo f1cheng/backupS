@@ -1,6 +1,6 @@
 ## on Ubuntu installation
 ```
-http://192.168.1.10:81/bareos-webui/
+http://192.8.1.10:81/bareos-webui/
 ---
 update port to 81 and 8443 from 80, 443:
 fred@fred-Vostro-2420:/etc/apache2$ vi ports.conf 
