@@ -1,5 +1,7 @@
 ## on Ubuntu installation
 ```
+http://192.168.1.10/bareos-webui
+http://fred-Vostro-2420/bareos-webui
 
 RELEASE=release/17.2/
 #Bareos
