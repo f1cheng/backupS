@@ -29,5 +29,15 @@ root@fred-Vostro-2420:/etc/bareos# wget -q $URL/Release.key -O- | apt-key add -O
 root@fred-Vostro-2420:/etc/bareos# apt install mariadb-server bareos bareos-database-mysql
 正在读取软件包列表... 完成
 
+正在安装新版本配置文件 /etc/bareos-webui/directors.ini ...
+正在安装新版本配置文件 /etc/bareos/bareos-dir.d/console/admin.conf.example ...
+/usr/sbin/a2enmod
+Module rewrite already enabled
+/usr/sbin/a2enmod
+Module rewrite already enabled
+/usr/sbin/a2enconf
+Conf bareos-webui already enabled
+您在 /var/mail/root 中有新邮件
+root@fred-Vostro-2420:/etc/bareos# 
 
 ```
