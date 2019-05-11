@@ -30,5 +30,23 @@ root@fred-Vostro-2420:/usr/lib/bareos/scripts# service bareos-dir status
 5月 11 15:21:31 fred-Vostro-2420 systemd[1]: bareos-director.service: PID file /var/lib/bareos/bareos-dir.9101.pid not readable (yet?) after st
 5月 11 15:21:31 fred-Vostro-2420 systemd[1]: Started Bareos Director Daemon service.
 
+root@fred-Vostro-2420:/etc/bareos# ls
+bareos-dir.conf  bareos-dir-export  bareos-fd.d     bareos-sd.d    bconsole.conf.dist  tray-monitor.d
+bareos-dir.d     bareos-fd.conf     bareos-sd.conf  bconsole.conf  tray-monitor.conf
+root@fred-Vostro-2420:/etc/bareos# cd bareos-dir.d/console/
+root@fred-Vostro-2420:/etc/bareos/bareos-dir.d/console# ls
+admin.conf.example  bareos-mon.conf
+root@fred-Vostro-2420:/etc/bareos/bareos-dir.d/console# cp admin.conf.example admin.conf
+root@fred-Vostro-2420:/etc/bareos/bareos-dir.d/console# vi admin.conf
+root@fred-Vostro-2420:/etc/bareos/bareos-dir.d/console# bconsole
+Connecting to Director fred-Vostro-2420:9101
+1000 OK: fred-Vostro-2420-dir Version: 17.2.4 (21 Sep 2017)
+Enter a period to cancel a command.
+*configure add console name=admin password=admin profile=webui-admin
+It seems that the configuration is not adapted to the include directory structure. This means, that the configure command may not work as expected. Your configuration changes may not survive a reload/restart. Please see http://doc.bareos.org/master/html/bareos-manual-main-reference.html#ConfigurationIncludeDirectory for details.
+Resource config file "/etc/bareos/bareos-dir.d/console/admin.conf" already exists.
+*
+
+
 ```
 
