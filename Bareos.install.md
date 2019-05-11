@@ -1,5 +1,9 @@
 ## on Ubuntu installation
 ```
+
+RELEASE=release/17.2/
+#Bareos
+
 2019年 05月 11日 星期六 15:17:08 CST
 root@fred-Vostro-2420:~# /usr/lib/bareos/scripts/create_bareos_database 
 Creating postgresql database
