@@ -107,6 +107,15 @@ Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 MariaDB [bareos]> 
+MariaDB [bareos]> show tables;
++--------------------+
+| Tables_in_bareos   |
++--------------------+
+| BaseFiles          |
+| Client             |
+| Counters           |
+
+show databases;
 
 
 ```
