@@ -1,5 +1,23 @@
 ## on Ubuntu installation
 ```
+http://192.168.1.10:81/bareos-webui/
+---
+update port to 81 and 8443 from 80, 443:
+fred@fred-Vostro-2420:/etc/apache2$ vi ports.conf 
+fred@fred-Vostro-2420:/etc/apache2$ sudo vi ports.conf 
+
+fred@fred-Vostro-2420:/etc/apache2$ nginx -s stop
+nginx: [alert] could not open error log file: open() "/var/log/nginx/error.log" failed (13: Permission denied)
+2019/05/11 18:54:28 [warn] 4281#4281: the "user" directive makes sense only if the master process runs with super-user privileges, ignored in /etc/nginx/nginx.conf:1
+2019/05/11 18:54:28 [notice] 4281#4281: signal process started
+2019/05/11 18:54:28 [alert] 4281#4281: kill(3997, 15) failed (1: Operation not permitted)
+fred@fred-Vostro-2420:/etc/apache2$ 
+
+---
+
+
+
+
 root@fred-Vostro-2420:/etc/bareos/bareos-dir.d/director# more bareos-dir.conf 
 Director {                            # define myself
   Name = bareos-dir
