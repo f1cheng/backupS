@@ -63,6 +63,14 @@ It seems that the configuration is not adapted to the include directory structur
 You have messages.
 *
 
+log info:
+^C
+root@fred-Vostro-2420:/var/log/bareos# ls -lrt
+总用量 16
+-rw-r----- 1 bareos bareos  766 5月  11 15:47 bareos-audit.log
+-rw-r--r-- 1 bareos bareos 8409 5月  11 21:01 bareos.log
+root@fred-Vostro-2420:/var/log/bareos# 
+
 
 
 
