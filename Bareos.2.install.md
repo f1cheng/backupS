@@ -47,4 +47,25 @@ root@fred-Vostro-2420://usr/share/bareos-webui# service apache2 restart
 root@fred-Vostro-2420://usr/share/bareos-webui# vi /usr/share/bareos-webui/vendor/Bareos/library/Bareos/BSock/BareosBSock.php
 root@fred-Vostro-2420://usr/share/bareos-webui# cd
 
+
+root@fred-Vostro-2420:/etc/bareos# bconsole
+Connecting to Director fred-Vostro-2420:9101
+ Encryption: None
+1000 OK: fred-Vostro-2420-dir Version: 18.2.5 (30 January 2019)
+bareos.org build binary
+bareos.org binaries are UNSUPPORTED by bareos.com.
+Get official binaries and vendor support on https://www.bareos.com
+You are connected using the default console
+
+Enter a period to cancel a command.
+*configure add console name=admin password=admin profile=webui-admin
+It seems that the configuration is not adapted to the include directory structure. This means, that the configure command may not work as expected. Your configuration changes may not survive a reload/restart. Resource config file "/etc/bareos/bareos-dir.d/console/admin.conf" already exists.
+You have messages.
+*
+
+
+
+
+
+
 ```
