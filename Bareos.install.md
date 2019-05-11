@@ -47,6 +47,54 @@ It seems that the configuration is not adapted to the include directory structur
 Resource config file "/etc/bareos/bareos-dir.d/console/admin.conf" already exists.
 *
 
+root@fred-Vostro-2420:/etc/apache2# more ports.conf 
+# If you just change the port or add more ports here, you will likely also
+# have to change the VirtualHost statement in
+# /etc/apache2/sites-enabled/000-default.conf
+
+Listen 80
+
+<IfModule ssl_module>
+	Listen 443
+</IfModule>
+
+<IfModule mod_gnutls.c>
+	Listen 443
+</IfModule>
+
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet
+root@fred-Vostro-2420:/etc/apache2# 
+root@fred-Vostro-2420:/etc/apache2# sed -i s/80/81/g ports.conf
+root@fred-Vostro-2420:/etc/apache2# sed -i s/443/8443/g ports.conf
+root@fred-Vostro-2420:/etc/apache2# more ports.conf 
+# If you just change the port or add more ports here, you will likely also
+# have to change the VirtualHost statement in
+# /etc/apache2/sites-enabled/000-default.conf
+
+Listen 81
+
+<IfModule ssl_module>
+	Listen 8443
+</IfModule>
+
+<IfModule mod_gnutls.c>
+	Listen 8443
+</IfModule>
+
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet
+root@fred-Vostro-2420:/etc/apache2# a2dissite 000-default
+Site 000-default disabled.
+To activate the new configuration, you need to run:
+  service apache2 reload
+root@fred-Vostro-2420:/etc/apache2# service appach2 reload
+appach2: unrecognized service
+root@fred-Vostro-2420:/etc/apache2# service appache2 reload
+appache2: unrecognized service
+root@fred-Vostro-2420:/etc/apache2# service apache2 reload
+apache2.service is not active, cannot reload.
+root@fred-Vostro-2420:/etc/apache2# service apache2 restart
+
+
 
 ```
 
