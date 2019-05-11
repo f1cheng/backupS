@@ -1,5 +1,19 @@
 ## on Ubuntu installation
 ```
+root@fred-Vostro-2420:/etc/bareos/bareos-dir.d/console# vi admin.conf
+root@fred-Vostro-2420:/etc/bareos/bareos-dir.d/console# 
+
+# Restricted console used by bareos-webui
+#
+Console {
+  Name = admin
+  Password = "admin"
+  Profile = "webui-admin"
+  TLS Enable = No
+}
+then: service bareos-dir restart
+
+
 http://192.168.1.10/bareos-webui
 http://fred-Vostro-2420/bareos-webui
 
