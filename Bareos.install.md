@@ -1,5 +1,22 @@
 ## on Ubuntu installation
 ```
+
+root@fred-Vostro-2420:~# vi /etc/apache2/conf-enabled/bareos-webui.conf
+root@fred-Vostro-2420:~# vi /etc/apache2/conf-available/bareos-webui.conf
+root@fred-Vostro-2420:~# vi /etc/apache2/conf-available/bareos-webui.conf
+root@fred-Vostro-2420:~# cd /usr/share/bareos-webui/public
+root@fred-Vostro-2420:/usr/share/bareos-webui/public# ls
+css  fonts  img  index.php  js
+root@fred-Vostro-2420:/usr/share/bareos-webui/public# ls -lrt
+总用量 20
+-rw-r--r-- 1 root root  668 12月 14  2017 index.php
+drwxr-xr-x 2 root root 4096 5月  11 12:54 fonts
+drwxr-xr-x 3 root root 4096 5月  11 12:54 css
+drwxr-xr-x 3 root root 4096 5月  11 12:54 js
+drwxr-xr-x 3 root root 4096 5月  11 12:54 img
+root@fred-Vostro-2420:/usr/share/bareos-webui/public# 
+
+
 root@fred-Vostro-2420:/etc/bareos/bareos-dir.d/console# vi admin.conf
 root@fred-Vostro-2420:/etc/bareos/bareos-dir.d/console# 
 
