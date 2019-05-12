@@ -6,8 +6,7 @@
 simulate bconsole via bconsole.py
 ==send_command or interactive in class LowLevel:
 =>call(command)->__call(command)->send(command)->socket.sendall(..msg)
-
-``` 
+```
 ```python
     def interactive(self):
         """
