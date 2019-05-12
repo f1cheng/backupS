@@ -1,5 +1,5 @@
 # Python plugins usage
-```
+```c
 Bareos-dir-class-plugin.py (c:\work\personal\bareos\source\bareos-master\core\src\plugins\dird):def load_bareos_plugin(context, plugindef):
 
 Python-dir.cc (c:\work\personal\bareos\source\bareos-master\core\src\plugins\dird):     * Lookup the load_bareos_plugin() function in the python module.
@@ -19,7 +19,7 @@ Python-dir.cc (c:\work\personal\bareos\source\bareos-master\core\src\plugins\dir
       pRetVal = PyObject_CallFunctionObjArgs(pFunc, p_ctx->bpContext,
                                              pPluginDefinition, NULL);
                                              
-```
+```  
 
 # To access Bareos written in C.
 ## send command to Director(Bareos-dir daemon) to get result
