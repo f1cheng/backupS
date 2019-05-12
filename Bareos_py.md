@@ -1,6 +1,6 @@
 
 # To access Bareos written in C.
-## send command to Directory to get result
+## send command to Director(Bareos-dir daemon) to get result
 ### Python interface
 ```  
 
