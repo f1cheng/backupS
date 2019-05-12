@@ -96,7 +96,7 @@ handlePluginEvent->
          */
         if (p_ctx->python_loaded) {
           retval = PyHandlePluginEvent(ctx, event, value);
-==>
+PyHandlePluginEvent ==>
   pFunc = PyDict_GetItemString(p_ctx->pDict,
                                "handle_plugin_event"); /* Borrowed reference */
   if (pFunc && PyCallable_Check(pFunc)) {
