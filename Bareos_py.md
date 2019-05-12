@@ -5,6 +5,56 @@
 Bareos-dir-class-plugin.py (c:\work\personal\bareos\source\bareos-master\core\src\plugins\dird):
 def load_bareos_plugin(context, plugindef):
 
+(in c:   
+static struct s_cmds cmds[] = {
+    {"accurate", AccurateCmd, false},
+    {"backup", BackupCmd, false},
+->
+BackupCmd(jcr)->GeneratePluginEvent(jcr, bEventStartBackupJob)
+)
+
+bEventType = dict(
+    bEventJobStart=1,
+    bEventJobEnd=2,
+    bEventStartBackupJob=3,
+    ...
+    
+    def handle_plugin_event(self, context, event):
+        if event == bEventType['bEventJobEnd']:
+            bareosfd.DebugMessage(
+                context, 100,
+                "handle_plugin_event called with bEventJobEnd\n")
+
+        elif event == bEventType['bEventEndBackupJob']:
+            bareosfd.DebugMessage(
+                context, 100,
+                "handle_plugin_event called with bEventEndBackupJob\n")
+
+        elif event == bEventType['bEventEndFileSet']:
+            bareosfd.DebugMessage(
+                context, 100,
+                "handle_plugin_event called with bEventEndFileSet\n")
+
+        elif event == bEventType['bEventStartBackupJob']:
+            bareosfd.DebugMessage(
+                context, 100,
+                "handle_plugin_event() called with bEventStartBackupJob\n")
+
+            return self.start_backup_job(context)
+
+
+    ## real plugin using py to do the exact things.
+    
+    def start_backup_job(self, context):
+        '''
+        Start of Backup Job
+        '''
+        check_option_bRC = self.check_options(context)
+        if check_option_bRC != bRCs['bRC_OK']:
+            return check_option_bRC
+
+        return self.ldap.prepare_backup(context, self.options)
+        
 ```
 ## invoking py plugin in c
 ```c 
