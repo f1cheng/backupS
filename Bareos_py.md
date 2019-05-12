@@ -1,4 +1,4 @@
-# Python plugins usage
+# Python plugins usage: by C to invoke
 
 ## python plugin = handle_plugin_event
 ```
