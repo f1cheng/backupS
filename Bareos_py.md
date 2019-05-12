@@ -118,7 +118,7 @@ PyHandlePluginEvent ==> loaded and call module in Py: handle_plugin_event::
 ## send command to Director(Bareos-dir daemon) to get result
 ### Python interface
 ```  
-simulate bconsole(c) via bconsole.py
+simulate bconsole(c) via bconsole.py => pure Python to achieve
 ==send_command or interactive in class LowLevel:
 =>call(command)->__call(command)->send(command)->socket.sendall(..msg)
 ```
@@ -141,6 +141,6 @@ simulate bconsole(c) via bconsole.py
 ### php interface
 ```
 The similar way with python to accesing Bareos-dir daemon which is based on c language.
-simulate bconsole(c) via xxx.php
+simulate bconsole(c) via xxx.php => pure PHP to achieve
 ```
 
