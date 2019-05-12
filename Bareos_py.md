@@ -1,11 +1,13 @@
 # Python plugins usage
 
+## python plugin
 ```
 Bareos-dir-class-plugin.py (c:\work\personal\bareos\source\bareos-master\core\src\plugins\dird):
 def load_bareos_plugin(context, plugindef):
 
 ```
-```c invoking py in c
+## invoking py plugin in c
+```c 
 Python-dir.cc (c:\work\personal\bareos\source\bareos-master\core\src\plugins\dird):     
 * Lookup the load_bareos_plugin() function in the python module.
 Python-dir.cc (c:\work\personal\bareos\source\bareos-master\core\src\plugins\dird):                                 "load_bareos_plugin"); /* Borrowed reference */
