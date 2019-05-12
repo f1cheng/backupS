@@ -1,6 +1,6 @@
 # Python plugins usage
 
-## python plugin
+## python plugin = handle_plugin_event
 ```
 Bareos-dir-class-plugin.py (c:\work\personal\bareos\source\bareos-master\core\src\plugins\dird):
 def load_bareos_plugin(context, plugindef):
