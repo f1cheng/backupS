@@ -11,6 +11,8 @@ static struct s_cmds cmds[] = {
     {"backup", BackupCmd, false},
 ->
 BackupCmd(jcr)->GeneratePluginEvent(jcr, bEventStartBackupJob)
+
+handlePluginEvent->PyHandlePluginEvent
 )
 
 bEventType = dict(
@@ -68,22 +70,46 @@ dird main->RunJob(JobControlRecord* jcr)->
 GeneratePluginEvent(jcr, bsdEventJobEnd)->
 trigger_plugin_event->
 handlePluginEvent(bpContext* ctx, bDirEvent* event, void* value)->
-retval = PyLoadModule(ctx, plugin_options.c_str())->
+handlePluginEvent->
 
-    /*
-     * Lookup the load_bareos_plugin() function in the python module.
-     */
-    pFunc = PyDict_GetItemString(p_ctx->pDict,
-                                 "load_bareos_plugin"); /* Borrowed reference */
-    if (pFunc && PyCallable_Check(pFunc)) {
-      PyObject *pPluginDefinition, *pRetVal;
+    switch (event->eventType) {
+      case bDirEventNewPluginOptions:
+        /*
+         * See if we already loaded the Python modules.
+         */
+        if (!p_ctx->python_loaded) {
+          retval = PyLoadModule(ctx, plugin_options.c_str());
+        }
 
-      pPluginDefinition = PyString_FromString((char*)value);
-      if (!pPluginDefinition) { goto bail_out; }
+        /*
+         * Only try to call when the loading succeeded.
+         */
+        if (retval == bRC_OK) {
+          retval = PyParsePluginDefinition(ctx, plugin_options.c_str());
+        }
+        break;
+      default:
+        /*
+         * Handle the generic events e.g. the ones which are just passed on.
+         * We only try to call Python when we loaded the right module until
+         * that time we pretend the call succeeded.
+         */
+        if (p_ctx->python_loaded) {
+          retval = PyHandlePluginEvent(ctx, event, value);
+==>
+  pFunc = PyDict_GetItemString(p_ctx->pDict,
+                               "handle_plugin_event"); /* Borrowed reference */
+  if (pFunc && PyCallable_Check(pFunc)) {
+    PyObject *pEventType, *pRetVal;
 
-      pRetVal = PyObject_CallFunctionObjArgs(pFunc, p_ctx->bpContext,
-                                             pPluginDefinition, NULL);
-                                             
+    pEventType = PyInt_FromLong(event->eventType);
+
+    pRetVal =
+        PyObject_CallFunctionObjArgs(pFunc, p_ctx->bpContext, pEventType, NULL);
+    Py_DECREF(pEventType);
+    
+==> handle_plugin_event in Python    
+     
 ```  
 
 # To access Bareos written in C.
