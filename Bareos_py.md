@@ -12,7 +12,7 @@ static struct s_cmds cmds[] = {
 ->
 BackupCmd(jcr)->GeneratePluginEvent(jcr, bEventStartBackupJob)
 
-handlePluginEvent->PyHandlePluginEvent
+handlePluginEvent->PyHandlePluginEvent-> module in Py:handle_plugin_event
 )
 
 bEventType = dict(
@@ -96,7 +96,9 @@ handlePluginEvent->
          */
         if (p_ctx->python_loaded) {
           retval = PyHandlePluginEvent(ctx, event, value);
-PyHandlePluginEvent ==>
+          
+PyHandlePluginEvent ==> loaded and call module in Py: handle_plugin_event::
+
   pFunc = PyDict_GetItemString(p_ctx->pDict,
                                "handle_plugin_event"); /* Borrowed reference */
   if (pFunc && PyCallable_Check(pFunc)) {
