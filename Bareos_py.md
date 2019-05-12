@@ -1,11 +1,20 @@
 # Python plugins usage
-```c
+
+```
 Bareos-dir-class-plugin.py (c:\work\personal\bareos\source\bareos-master\core\src\plugins\dird):
 def load_bareos_plugin(context, plugindef):
 
+```
+```c
 Python-dir.cc (c:\work\personal\bareos\source\bareos-master\core\src\plugins\dird):     
 * Lookup the load_bareos_plugin() function in the python module.
 Python-dir.cc (c:\work\personal\bareos\source\bareos-master\core\src\plugins\dird):                                 "load_bareos_plugin"); /* Borrowed reference */
+
+dird main->RunJob(JobControlRecord* jcr)->
+GeneratePluginEvent(jcr, bsdEventJobEnd)->
+trigger_plugin_event->
+handlePluginEvent(bpContext* ctx, bDirEvent* event, void* value)->
+retval = PyLoadModule(ctx, plugin_options.c_str())->
 
     /*
      * Lookup the load_bareos_plugin() function in the python module.
