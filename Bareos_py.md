@@ -110,7 +110,7 @@ PyHandlePluginEvent ==> loaded and call module in Py: handle_plugin_event::
         PyObject_CallFunctionObjArgs(pFunc, p_ctx->bpContext, pEventType, NULL);
     Py_DECREF(pEventType);
     
-==> handle_plugin_event in Python    
+==> handle_plugin_event in Python equiv by invoking in C's (PyObject_CallFunctionObjArgs(pFunc,,))   
      
 ```  
 
