@@ -1,5 +1,17 @@
 ## conf
-
+### test config files
+```
+5.4 Testing your Configuration Files
+You can test if your configuration file is syntactically correct by running the appropriate daemon with the -t option. The daemon will process the configuration file and print any error messages then terminate.
+As the Bareos Director and Bareos Storage Daemon runs as user bareos, testing the configuration should be done as bareos.
+This is especially required to test the Bareos Director, as it also connects to the database and checks if the catalog schema version is correct. Depending on your database, only the bareos has permission to access it.
+Commands 5.1: Testing Configuration Files
+su bareos -s /bin/sh -c "/usr/sbin/bareos-dir -t"
+su bareos -s /bin/sh -c "/usr/sbin/bareos-sd -t"
+bareos-fd -t
+bconsole -t
+bareos-tray-monitor -t
+```
 ### used by console
 ```
 
