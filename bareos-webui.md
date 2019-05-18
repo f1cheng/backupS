@@ -28,8 +28,18 @@ Console {
   # TLS with certificates.
   #
   # For testing purposes we disable it here
-  TLS Enable = No
+  TLS Enable = No-------------------------------------------------Key!!!! for access by admin/admin login, or can't.
   CommandACL = *all*
 }
+
+root@fred-Vostro-2420:/etc/bareos/bareos-dir.d/console# more bareos-mon.conf 
+Console {
+  Name = bareos-mon
+  Description = "Restricted console used by tray-monitor to get the status of the director."
+  Password = "PEQ+pVpueXv2l7g9qCkuJzMhpG8KcpTiODvMENaw+tNT"
+  CommandACL = status, .status
+  JobACL = *all*
+}
+
 
 ```
