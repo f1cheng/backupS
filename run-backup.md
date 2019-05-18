@@ -144,4 +144,47 @@ Terminated Jobs:
 ====
 
 
+9-5月 00:22 bareos-dir JobId 5:    Handshake: Immediate TLS 19-5月 00:22 bareos-dir JobId 5:  Encryption: PSK-AES256-CBC-SHA
+19-5月 00:22 client2-fd JobId 5: Created 30 wildcard excludes from FilesNotToBackup Registry key
+19-5月 00:22 client2-fd JobId 5: Error: lib/bsock_tcp.cc:192 BnetHost2IpAddrs() for host "fred-Vostro-2420" failed: ERR=No such host is known.
+19-5月 00:22 client2-fd JobId 5: Fatal error: Failed to connect to Storage daemon: fred-Vostro-2420:9103
+19-5月 00:22 bareos-dir JobId 5: Fatal error: Bad response to Storage command: wanted 2000 OK storage
+, got 2902 Bad storage
+
+19-5月 00:23 bareos-dir JobId 5: Error: Bareos bareos-dir 18.2.5 (30Jan19):
+  Build OS:               Linux-4.4.92-6.18-default ubuntu Ubuntu 16.04 LTS
+  JobId:                  5
+  Job:                    backup-client2-fd.2019-05-19_00.22.32_36
+  Backup Level:           Full (upgraded from Incremental)
+  Client:                 "client2-fd" 18.2.5 (30Jan19) Microsoft Windows 8 Enterprise Edition (build 9200), 64-bit,Cross-compile,Win64
+  FileSet:                "windows10" 2019-05-19 00:22:32
+  Pool:                   "Full" (From Job FullPool override)
+  Catalog:                "MyCatalog" (From Client resource)
+  Storage:                "File" (From Job resource)
+  Scheduled time:         19-5月-2019 00:22:22
+  Start time:             19-5月-2019 00:22:34
+  End time:               19-5月-2019 00:23:17
+  Elapsed time:           43 secs
+  Priority:               10
+  FD Files Written:       0
+  SD Files Written:       0
+  FD Bytes Written:       0 (0 B)
+  SD Bytes Written:       0 (0 B)
+  Rate:                   0.0 KB/s
+  Software Compression:   None
+  VSS:                    yes
+  Encryption:             no
+  Accurate:               no
+  Volume name(s):
+  Volume Session Id:      2
+  Volume Session Time:    1558170323
+  Last Volume Bytes:      0 (0 B)
+  Non-fatal FD errors:    2
+  SD Errors:              0
+  FD termination status:  Fatal Error
+  SD termination status:  Waiting on FD
+  Bareos binary info:     bareos.org build: Get official binaries and vendor support on bareos.com
+  Termination:            *** Backup Error ***
+
+
 ```
