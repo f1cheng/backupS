@@ -2,6 +2,16 @@
 
 ## webui
 ```
+root@fred-Vostro-2420:/etc/bareos-webui# ls -lrt
+总用量 20
+-rw-r--r-- 1 bareos bareos 1352 5月  18 12:52 configuration.ini
+-rw-r--r-- 1 bareos bareos  382 5月  18 12:52 webui-admin.conf.back
+-rw-r--r-- 1 bareos bareos 1980 5月  18 12:52 directors.ini.dpkg-old
+-rw-r--r-- 1 bareos bareos  137 5月  18 15:36 admin.conf.back
+-rw-r--r-- 1 bareos bareos 2193 5月  18 15:37 directors.ini
+root@fred-Vostro-2420:/etc/bareos-webui# 
+
+----
 root@fred-Vostro-2420:/etc/bareos/bareos-dir.d/console# more admin.conf
 #
 # Restricted console used by bareos-webui
