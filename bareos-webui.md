@@ -75,4 +75,36 @@ root@fred-Vostro-2420:/etc/bareos/bareos-dir.d/console# vi admin.conf
 root@fred-Vostro-2420:/etc/bareos/bareos-dir.d/console# service bareos-dir restart
 root@fred-Vostro-2420:/etc/bareos/bareos-dir.d/console# http://192.168.0.4:81/bareos-webui/director/
 
+
+root@fred-Vostro-2420:/etc/bareos/bareos-dir.d/console# more admin.conf
+#
+# Restricted console used by bareos-webui
+#
+Console {
+  Name = admin
+  Password = admin
+  Profile = "webui-admin"
+  # As php does not support TLS-PSK,
+  # and the director has TLS enabled by default,
+  # we need to either disable TLS or setup
+  # TLS with certificates.
+  #
+  # For testing purposes we disable it here
+
+  # 1.below two shall be removed firstly, service bareos-dir restart;try access, not allowed.
+  # 2.then open the two item at the same tiem. restart, then allowd into menus.only once time.
+  # if need again, login successfully. repeat 1&2
+  #TLS Enable = No
+  #CommandACL = run
+
+  # or 'remove below, restart, add below restart service'
+  #TLS Enable = No
+  #CommandACL = *all*
+
+  # or 'remove below, restart, add below restart service'
+  # 'http://192.168.0.4:81/bareos-webui/auth/login'
+  # 1. Sorry, CFcan not authenticate. Wrong username and/or password.
+  # 2. open below
+  TLS Enable = No
+}
 ```
