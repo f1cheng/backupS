@@ -1,6 +1,6 @@
 ## backup
 ```
-
+==checking log from tail -f /var/log/bareos/bareos.log
 
 When at a prompt, entering a period cancels the command.
 
