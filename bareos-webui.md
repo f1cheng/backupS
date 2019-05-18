@@ -64,3 +64,15 @@ Console {
 
 
 ```
+
+## this item, removed, restart; add, restart; then access url.
+```
+  TLS Enable = No
+}
+root@fred-Vostro-2420:/etc/bareos/bareos-dir.d/console# vi admin.conf
+root@fred-Vostro-2420:/etc/bareos/bareos-dir.d/console# service bareos-dir restart
+root@fred-Vostro-2420:/etc/bareos/bareos-dir.d/console# vi admin.conf
+root@fred-Vostro-2420:/etc/bareos/bareos-dir.d/console# service bareos-dir restart
+root@fred-Vostro-2420:/etc/bareos/bareos-dir.d/console# http://192.168.0.4:81/bareos-webui/director/
+
+```
