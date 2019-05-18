@@ -186,5 +186,13 @@ Terminated Jobs:
   Bareos binary info:     bareos.org build: Get official binaries and vendor support on bareos.com
   Termination:            *** Backup Error ***
 
+==1 hostname resolves fail
+==2 handshake failed
+19-5月 00:33 bareos-dir JobId 6: Start Backup JobId 6, Job=backup-client2-fd.2019-05-19_00.33.49_08
+19-5月 00:34 bareos-dir JobId 6: Connected Storage daemon at fred-Vostro-2420:9103, encryption: PSK-AES256-CBC-SHA
+19-5月 00:34 bareos-dir JobId 6: Using Device "FileStorage" to write.
+19-5月 00:34 bareos-dir JobId 6: Probing client protocol... (result will be saved until config reload)
+19-5月 00:34 bareos-dir JobId 6: Connected Client: client2-fd at 192.168.0.8:9102, encryption: PSK-AES256-CBC-SHA
+19-5月 00:34 bareos-dir JobId 6:    Handshake: Immediate TLS 19-5月 00:34 bareos-dir JobId 6:  Encryption: PSK-AES256-CBC-SHA
 
 ```
