@@ -348,4 +348,11 @@ drwxrwxrwx   0 0        0                  0 2019-05-19 16:43:42  c:/T
 2000 OK estimate files=4 bytes=20
 *
 
+==for win10 client3 config
+configure add client name=client3-fd address=192.168.0.7 password=secret
+Exported resource file "/etc/bareos/bareos-dir-export/client/client3-fd/bareos-fd.d/director/bareos-dir.conf":
+Director {
+  Name = bareos-dir
+  Password = "[md5]5ebe2294ecd0e0f08eab7690d2a6ee69"
+}
 ```
