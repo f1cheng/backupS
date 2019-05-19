@@ -173,3 +173,41 @@ drwxrwxrwx   0 0        0                  0 2019-05-19 14:52:35  c:/T
 *
 
 ```
+
+## backup client3 issue
+```
+
+root@fred-Vostro-2420:/etc/bareos/bareos-dir.d/fileset# bconsole
+Connecting to Director fred-Vostro-2420:9101
+ Encryption: None
+1000 OK: bareos-dir Version: 18.2.5 (30 January 2019)
+bareos.org build binary
+bareos.org binaries are UNSUPPORTED by bareos.com.
+Get official binaries and vendor support on https://www.bareos.com
+You are connected using the default console
+
+Enter a period to cancel a command.
+*estimate job=backup-client3-fd listing client=client3-fd fileset=windows10
+Using Catalog "MyCatalog"
+Connecting to Client client3-fd at 192.168.0.7:9102
+-rwxrwxrwx   1 0        0                  6 2019-05-19 16:42:24  c:/T/jj.txt
+-rwxrwxrwx   1 0        0                  6 2019-05-19 16:43:19  c:/T/jjj.txt
+-rwxrwxrwx   1 0        0                  8 2019-05-19 16:43:42  c:/T/wonita-ffzhu.txt
+drwxrwxrwx   0 0        0                  0 2019-05-19 16:43:42  c:/T
+2000 OK estimate files=4 bytes=20
+
+*run
+2.
+
+Job queued. JobId=27
+You have messages.
+*messages
+19-5月 17:10 bareos-dir JobId 27: No prior Full backup Job record found.
+19-5月 17:10 bareos-dir JobId 27: No prior or suitable Full backup found in catalog. Doing FULL backup.
+19-5月 17:10 bareos-dir JobId 27: Start Backup JobId 27, Job=backup-client3-fd.2019-05-19_17.10.47_04
+19-5月 17:11 bareos-dir JobId 27: Connected Storage daemon at fred-Vostro-2420:9103, encryption: PSK-AES256-CBC-SHA
+19-5月 17:11 bareos-dir JobId 27: Using Device "FileStorage2" to write.
+19-5月 17:11 bareos-dir JobId 27: Connected Client: client3-fd at 192.168.0.7:9102, encryption: PSK-AES256-CBC-SHA
+19-5月 17:11 bareos-dir JobId 27:  Handshake: Immediate TLS 
+
+```
