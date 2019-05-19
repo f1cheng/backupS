@@ -1,5 +1,5 @@
 
-## other ubuntu or centos installation for Bareos Client testing.
+## try on other ubuntu or centos installation for Bareos Client testing.
 
 ## try  ports open
 ```
