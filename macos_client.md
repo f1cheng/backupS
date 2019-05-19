@@ -17,4 +17,9 @@ FeideMacBook-Pro:director root# launchctl list org.bareos.bareos-fd
 	);
 };
 FeideMacBook-Pro:director root# 
+
+
+run
+
+*estimate job=backup-client4-fd listing client=client4-fd fileset=macos
 ```
