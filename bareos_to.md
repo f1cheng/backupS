@@ -3,6 +3,11 @@
 
 ## try  ports open
 ```
+Console -> DIR:9101
+DIR     -> SD:9103
+DIR     -> FD:9102
+FD      -> SD:9103
+
 Note, port 9103 serves both the Director and the File daemon, each having its own independent connection.
 
 If you are running iptables, you might add something like:
