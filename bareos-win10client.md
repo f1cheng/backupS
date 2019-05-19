@@ -355,4 +355,149 @@ Director {
   Name = bareos-dir
   Password = "[md5]5ebe2294ecd0e0f08eab7690d2a6ee69"
 }
+
+bconsole
+show job:
+Job {
+  Name = "backup-client3-fd"
+  Client = "client3-fd"
+  JobDefs = "Windows10Job"
+}
+
+Job {
+  Name = "backup-client2-fd"
+  Client = "client2-fd"
+  JobDefs = "Windows10Job"
+}
+
+*show client
+Client {
+  Name = "client3-fd"
+  Address = "192.168.0.7"
+  Password = "[md5]5ebe2294ecd0e0f08eab7690d2a6ee69"
+  Catalog = "MyCatalog"
+}
+
+Client {
+  Name = "client2-fd"
+  Address = "192.168.0.8"
+  Password = "[md5]5ebe2294ecd0e0f08eab7690d2a6ee69"
+  Catalog = "MyCatalog"
+}
+
+
+*show jobdefs
+JobDefs {
+  Name = "Windows10Job"
+  Type = Backup
+  Level = Incremental
+  Messages = "Standard"
+  Storage = "File2"
+  Pool = "Incremental"
+  FullBackupPool = "Full"
+  IncrementalBackupPool = "Incremental"
+  DifferentialBackupPool = "Differential"
+  FileSet = "windows10"
+  Schedule = "WeeklyCycle"
+  WriteBootstrap = "/var/lib/bareos/%c.bsr"
+}
+JobDefs {
+  Name = "DefaultJob"
+  Type = Backup
+  Level = Incremental
+  Messages = "Standard"
+  Storage = "File"
+  Pool = "Incremental"
+  FullBackupPool = "Full"
+  IncrementalBackupPool = "Incremental"
+  DifferentialBackupPool = "Differential"
+  Client = "bareos-fd"
+  FileSet = "SelfTest"
+  Schedule = "WeeklyCycle"
+  WriteBootstrap = "/var/lib/bareos/%c.bsr"
+}
+
+
+*show fileset
+FileSet {
+  Name = "Windows All Drives"
+  Include {
+    Options {
+      Signature = MD5
+      IgnoreCase = Yes
+      Exclude = Yes
+      AclSupport = Yes
+      XattrSupport = Yes
+      Wild Dir = "[A-Z]:/RECYCLER"
+      Wild Dir = "[A-Z]:/$RECYCLE.BIN"
+      Wild Dir = "[A-Z]:/System Volume Information"
+      Wild File = "[A-Z]:/pagefile.sys"
+      Drive Type = "fixed"
+    }
+    File = "/"
+  }
+}
+
+FileSet {
+  Name = "windows10"
+  Description = "fileset just to backup some files for windows10"
+  Include {
+    Options {
+      Signature = MD5
+      IgnoreCase = Yes
+      AclSupport = Yes
+      XattrSupport = Yes
+      Wild File = "c:/T/*.txt"
+      Drive Type = "fixed"
+    }
+    File = "c:/T"
+  }
+}
+
+*show storage
+Storage {
+  Name = "File"
+  Address = "fred-Vostro-2420"
+  Password = "[md5]e69a5d132321f4db664357a8a6c4558f"
+  Device = "FileStorage"
+  MediaType = "File"
+}
+
+Storage {
+  Name = "File2"
+  Address = "fred-Vostro-2420"
+  Password = "[md5]e69a5d132321f4db664357a8a6c4558f"
+  Device = "FileStorage2"
+  MediaType = "File"
+  SddPort = 9103
+}
+
+
+device checked:
+root@fred-Vostro-2420:/etc/bareos/bareos-sd.d/device# more FileStorage2.conf 
+Device {
+  Name = FileStorage2
+  Media Type = File
+  Archive Device = /var/lib/bareos/storage2
+  LabelMedia = yes;                   # lets Bareos label unlabeled media
+  Random Access = yes;
+  AutomaticMount = yes;               # when device opened, read it
+  RemovableMedia = no;
+  AlwaysOpen = no;
+  Description = "File device. A connecting Director must have the same Name and MediaType."
+}
+root@fred-Vostro-2420:/etc/bareos/bareos-sd.d/device# more FileStorage.conf 
+Device {
+  Name = FileStorage
+  Media Type = File
+  Archive Device = /var/lib/bareos/storage
+  LabelMedia = yes;                   # lets Bareos label unlabeled media
+  Random Access = yes;
+  AutomaticMount = yes;               # when device opened, read it
+  RemovableMedia = no;
+  AlwaysOpen = no;
+  Description = "File device. A connecting Director must have the same Name and MediaType."
+}
+root@fred-Vostro-2420:/etc/bareos/bareos-sd.d/device# 
+
 ```
