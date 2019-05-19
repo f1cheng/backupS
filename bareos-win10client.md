@@ -211,3 +211,109 @@ You have messages.
 19-5月 17:11 bareos-dir JobId 27:  Handshake: Immediate TLS 
 
 ```
+
+## Client2&3 for win10
+```
+Note: 
+Success: Job25 is local ubuntu backup; 
+Failed: job26 is one client win10 backup; job27 is another client win10 backup
+
+19-5月 16:20 bareos-dir JobId 25: Bareos bareos-dir 18.2.5 (30Jan19):
+  Build OS:               Linux-4.4.92-6.18-default ubuntu Ubuntu 16.04 LTS
+  JobId:                  25
+  Job:                    backup-bareos-fd.2019-05-19_16.19.41_05
+  Backup Level:           Incremental, since=2019-05-19 16:05:28
+  Client:                 "bareos-fd" 18.2.5 (30Jan19) Linux-4.4.92-6.18-default,ubuntu,Ubuntu 16.04 LTS,xUbuntu_16.04,i586
+  FileSet:                "SelfTest" 2019-05-11 21:00:00
+  Pool:                   "Incremental" (From Job IncPool override)
+  Catalog:                "MyCatalog" (From Client resource)
+  Storage:                "File" (From Job resource)
+  Scheduled time:         19-5月-2019 16:19:40
+  Start time:             19-5月-2019 16:20:24
+  End time:               19-5月-2019 16:20:25
+  Elapsed time:           1 sec
+  Priority:               10
+  FD Files Written:       0
+  SD Files Written:       0
+  FD Bytes Written:       0 (0 B)
+  SD Bytes Written:       0 (0 B)
+  Rate:                   0.0 KB/s
+  Software Compression:   None
+  VSS:                    no
+  Encryption:             no
+  Accurate:               no
+  Volume name(s):         
+  Volume Session Id:      1
+  Volume Session Time:    1558253552
+  Last Volume Bytes:      0 (0 B)
+  Non-fatal FD errors:    0
+  SD Errors:              0
+  FD termination status:  OK
+  SD termination status:  OK
+  Bareos binary info:     bareos.org build: Get official binaries and vendor support on bareos.com
+  Termination:            Backup OK
+
+19-5月 16:24 bareos-dir JobId 26: No prior Full backup Job record found.
+19-5月 16:24 bareos-dir JobId 26: No prior or suitable Full backup found in catalog. Doing FULL backup.
+19-5月 16:24 bareos-dir JobId 26: Start Backup JobId 26, Job=backup-client2-fd.2019-05-19_16.24.25_06
+19-5月 16:24 bareos-dir JobId 26: Connected Storage daemon at fred-Vostro-2420:9103, encryption: None
+19-5月 16:24 bareos-dir JobId 26: Using Device "FileStorage2" to write.
+19-5月 16:24 bareos-dir JobId 26: Connected Client: client2-fd at 192.168.0.8:9102, encryption: PSK-AES256-CBC-SHA
+19-5月 16:24 bareos-dir JobId 26:  Handshake: Immediate TLS 19-5月 16:24 bareos-dir JobId 26:  Encryption: PSK-AES256-CBC-SHA
+19-5月 16:24 client2-fd JobId 26: Created 30 wildcard excludes from FilesNotToBackup Registry key
+19-5月 16:25 client2-fd JobId 26: Warning: lib/bsock_tcp.cc:133 Could not connect to Storage daemon on fred-Vostro-2420:9103. ERR=The operation completed successfully.
+
+Retrying ...
+19-5月 16:42 client2-fd JobId 26: Warning: lib/bsock_tcp.cc:133 Could not connect to Storage daemon on fred-Vostro-2420:9103. ERR=The operation completed successfully.
+
+Retrying ...
+19-5月 16:54 client2-fd JobId 26: Fatal error: lib/bsock_tcp.cc:139 Unable to connect to Storage daemon on fred-Vostro-2420:9103. ERR=The operation completed successfully.
+
+19-5月 16:54 client2-fd JobId 26: Fatal error: Failed to connect to Storage daemon: fred-Vostro-2420:9103
+19-5月 16:54 bareos-dir JobId 26: Fatal error: Bad response to Storage command: wanted 2000 OK storage
+, got 2902 Bad storage
+
+19-5月 16:55 bareos-dir JobId 26: Error: Bareos bareos-dir 18.2.5 (30Jan19):
+  Build OS:               Linux-4.4.92-6.18-default ubuntu Ubuntu 16.04 LTS
+  JobId:                  26
+  Job:                    backup-client2-fd.2019-05-19_16.24.25_06
+  Backup Level:           Full (upgraded from Incremental)
+  Client:                 "client2-fd" 18.2.5 (30Jan19) Microsoft Windows 8 Enterprise Edition (build 9200), 64-bit,Cross-compile,Win64
+  FileSet:                "windows10" 2019-05-19 01:01:10
+  Pool:                   "Full" (From Job FullPool override)
+  Catalog:                "MyCatalog" (From Client resource)
+  Storage:                "File2" (From Job resource)
+  Scheduled time:         19-5月-2019 16:24:23
+  Start time:             19-5月-2019 16:24:27
+  End time:               19-5月-2019 16:55:08
+  Elapsed time:           30 mins 41 secs
+  Priority:               10
+  FD Files Written:       0
+  SD Files Written:       0
+  FD Bytes Written:       0 (0 B)
+  SD Bytes Written:       0 (0 B)
+  Rate:                   0.0 KB/s
+  Software Compression:   None
+  VSS:                    yes
+  Encryption:             no
+  Accurate:               no
+  Volume name(s):         
+  Volume Session Id:      2
+  Volume Session Time:    1558253552
+  Last Volume Bytes:      0 (0 B)
+  Non-fatal FD errors:    2
+  SD Errors:              0
+  FD termination status:  Fatal Error
+  SD termination status:  Waiting on FD
+  Bareos binary info:     bareos.org build: Get official binaries and vendor support on bareos.com
+  Termination:            *** Backup Error ***
+
+19-5月 17:10 bareos-dir JobId 27: No prior Full backup Job record found.
+19-5月 17:10 bareos-dir JobId 27: No prior or suitable Full backup found in catalog. Doing FULL backup.
+19-5月 17:10 bareos-dir JobId 27: Start Backup JobId 27, Job=backup-client3-fd.2019-05-19_17.10.47_04
+19-5月 17:11 bareos-dir JobId 27: Connected Storage daemon at fred-Vostro-2420:9103, encryption: PSK-AES256-CBC-SHA
+19-5月 17:11 bareos-dir JobId 27: Using Device "FileStorage2" to write.
+19-5月 17:11 bareos-dir JobId 27: Connected Client: client3-fd at 192.168.0.7:9102, encryption: PSK-AES256-CBC-SHA
+19-5月 17:11 bareos-dir JobId 27:  Handshake: Immediate TLS 19-5月 17:11 bareos-dir JobId 27:  Encryption: PSK-AES256-CBC-SHA
+
+```
