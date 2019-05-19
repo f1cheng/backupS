@@ -1,5 +1,11 @@
 ##
 ```
+FeideMacBook-Pro:client root# pwd
+/usr/local/etc/bareos/bareos-fd.d/client
+FeideMacBook-Pro:client root# 
+FeideMacBook-Pro:client root# 
+
+
 FeideMacBook-Pro:director root# launchctl list org.bareos.bareos-fd
 {
 	"StandardOutPath" = "/var/run/bareos-fd.log";
