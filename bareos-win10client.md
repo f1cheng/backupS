@@ -145,3 +145,31 @@ Maximum Concurrent Jobs exceeded on the FD or
 FD networking messed up (restart daemon).
 
 ```
+
+```
+*estimate job=backup-bareos-fd listing client=bareos-fd fileset=SelfTest
+Using Catalog "MyCatalog"
+Connecting to Client bareos-fd at localhost:9102
+-rwxr-xr-x   1 root     root           46904 2017-07-10 23:46:12  /usr/sbin/usb_modeswitch_dispatcher
+-rwxr-xr-x   1 root     root         1094060 2017-12-17 21:48:20  /usr/sbin/grub-install
+-rwxr-xr-x   1 root     root           49260 2017-07-10 23:12:06  /usr/sbin/chpasswd
+-rwxr-xr-x   1 root     root           19878 2017-07-10 22:46:36  /usr/sbin/invoke-rc.d
+-rwxr-xr-x   1 root     root            9870 2019-05-11 12:53:49  /usr/sbin/a2query
+-rwxr-xr-x   1 root     root         1195592 2017-07-10 22:54:13  /usr/sbin/ModemManager
+...
+
+drwxr-xr-x   2 root     root           12288 2019-05-11 20:26:50  /usr/sbin
+2000 OK estimate files=353 bytes=42,658,471
+*estimate job=backup-client2-fd listing client=client2-fd fileset=windows10
+Using Catalog "MyCatalog"
+Connecting to Client client2-fd at 192.168.0.8:9102
+-rwxrwxrwx   1 0        0                  6 2019-05-19 14:52:38  c:/T/14dian.txt
+-rwxrwxrwx   1 0        0                  5 2019-05-01 11:32:18  c:/T/CFN/my1.txt
+drwxrwxrwx   0 0        0                  0 2019-05-01 11:32:15  c:/T/CFN
+-rwxrwxrwx   1 0        0                 27 2019-05-18 23:37:19  c:/T/j.txt
+-rwxrwxrwx   1 0        0                  5 2019-05-19 00:59:41  c:/T/jj.t.tt
+drwxrwxrwx   0 0        0                  0 2019-05-19 14:52:35  c:/T
+2000 OK estimate files=6 bytes=43
+*
+
+```
